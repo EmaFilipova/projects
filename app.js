@@ -52,3 +52,16 @@ function displayProjectsGrid(projects) {
     );
   }
 }
+const fetch = require("node-fetch");
+const https = require("https");
+
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false,
+});
+
+const response = await fetch(url, {
+  method: "POST",
+  headers: headers,
+  body: body,
+  agent: httpsAgent,
+});
