@@ -41,27 +41,14 @@ function displayProjectsGrid(projects) {
       "beforeend",
       `    
     <article class="grid-item">
-      <img src="${project.acf.image}" alt="${project.title.rendered}"></img>
+      <img src="${project.acf.image}" alt="${project.title.rendered}" />
       <h2>${project.title.rendered}</h2>
-    <p>${project.acf.description}</p>
-     <p>${project.acf.client}</p>
-       <p>${project.acf.type}</p>
-        <p><a href="${project.acf.link}" target="_blank">View Project</a></p>
-      </article>
+      <p>${project.acf.description}</p>
+      <p>${project.acf.client}</p>
+      <p>${project.acf.type}</p>
+      <p><a href="${project.acf.link}" target="_blank">View Project</a></p>
+    </article>
     `
     );
   }
 }
-const fetch = require("node-fetch");
-const https = require("https");
-
-const httpsAgent = new https.Agent({
-  rejectUnauthorized: false,
-});
-
-const response = await fetch(url, {
-  method: "POST",
-  headers: headers,
-  body: body,
-  agent: httpsAgent,
-});
