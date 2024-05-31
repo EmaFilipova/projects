@@ -14,7 +14,7 @@ async function initApp() {
 // Function to fetch projects data from the API
 async function getProjects() {
   const response = await fetch(
-    "https://headless.portfolio.emafilipova.com/wp-json/wp/v2/projects?acf_format=standard"
+    "https://portfolio.emafilipova.com/wp-json/wp/v2/projects?acf_format=standard"
   ); // Fetch data from the API
   const data = await response.json(); // Parse the JSON response
   return data; // Return the parsed data
